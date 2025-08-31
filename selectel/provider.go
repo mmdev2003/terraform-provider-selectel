@@ -121,6 +121,19 @@ func Provider() *schema.Provider {
 			"selectel_mks_kube_versions_v1":             dataSourceMKSKubeVersionsV1(),
 			"selectel_mks_feature_gates_v1":             dataSourceMKSFeatureGatesV1(),
 			"selectel_mks_admission_controllers_v1":     dataSourceMKSAdmissionControllersV1(),
+			// Единичные data sources
+			"selectel_dedicated_server_location_v1":      dataSourceDedicatedServerLocationV1(),
+			"selectel_dedicated_server_configuration_v1": dataSourceDedicatedServerConfigurationV1(),
+			"selectel_dedicated_server_tariff_v1":        dataSourceDedicatedServerTariffV1(),
+			"selectel_dedicated_server_os_image_v1":      dataSourceDedicatedServerOSImageV1(),
+			"selectel_dedicated_server_network_v1":       dataSourceDedicatedServerNetworkV1(),
+
+			// Множественные data sources
+			"selectel_dedicated_server_locations_v1":      dataSourceDedicatedServerLocationsV1(),
+			"selectel_dedicated_server_configurations_v1": dataSourceDedicatedServerConfigurationsV1(),
+			"selectel_dedicated_server_tariffs_v1":        dataSourceDedicatedServerTariffsV1(),
+			"selectel_dedicated_server_os_images_v1":      dataSourceDedicatedServerOSImagesV1(),
+			"selectel_dedicated_server_networks_v1":       dataSourceDedicatedServerNetworksV1(),
 		},
 		ResourcesMap: map[string]*schema.Resource{
 			"selectel_vpc_floatingip_v2":                            resourceVPCFloatingIPV2(),
@@ -162,6 +175,7 @@ func Provider() *schema.Provider {
 			"selectel_craas_token_v1":                               resourceCRaaSTokenV1(),
 			"selectel_secretsmanager_secret_v1":                     resourceSecretsManagerSecretV1(),
 			"selectel_secretsmanager_certificate_v1":                resourceSecretsManagerCertificateV1(),
+			"selectel_dedicated_server_v1":                          resourceDedicatedServerV1(),
 		},
 		ConfigureContextFunc: configureProvider,
 	}
